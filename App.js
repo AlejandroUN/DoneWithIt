@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 // below we're importing components and API's
 import { StyleSheet, Text, Platform, View, Alert, TouchableNativeFeedback,TouchableHighlight,TouchableOpacity,TouchableWithoutFeedback, Image, SafeAreaView, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import SignInScreen  from './src/screens/SignInScreen';
 
 export default function App() {
 	// console.log(require("./assets/icon.png"))
@@ -11,29 +12,32 @@ export default function App() {
 	// console.log(useDimensions());
 	// console.log(useDeviceOrientation());
   return (
-	  <View
-	  	style={{
-			  backgroundColor: "#fff",
-			  flex: 1,
-			  flexDirection: "row"
-		  }}	  
-	  >
-		  <View style={{
-			  backgroundColor: "dodgerblue",
-			  width: 100,	
-			  height: 100,		  
-		  	}}/>
-		  <View style={{
-			  backgroundColor: "orange",
-			  width: 100,	
-			  height: 100,
-		  	}}/>
-		  <View style={{
-			  backgroundColor: "gold",
-			  width: 100,	
-			  height: 100,
-		  	}}/>
-	  </View>
+	  <SafeAreaView style={styles.root}>
+		  <SignInScreen />
+	  </SafeAreaView>
+	//   <View
+	//   	style={{
+	// 		  backgroundColor: "#fff",
+	// 		  flex: 1,
+	// 		  flexDirection: "row"
+	// 	  }}	  
+	//   >
+	// 	  <View style={{
+	// 		  backgroundColor: "dodgerblue",
+	// 		  width: 100,	
+	// 		  height: 100,		  
+	// 	  	}}/>
+	// 	  <View style={{
+	// 		  backgroundColor: "orange",
+	// 		  width: 100,	
+	// 		  height: 100,
+	// 	  	}}/>
+	// 	  <View style={{
+	// 		  backgroundColor: "gold",
+	// 		  width: 100,	
+	// 		  height: 100,
+	// 	  	}}/>
+	//   </View>
 	//   <View
 	//   	style={{
 	// 		  backgroundColor: "#fff",
@@ -95,6 +99,10 @@ export default function App() {
 const containerStyle = { backgroundColor: "dodgerblue" };
 
 const styles = StyleSheet.create({
+	root:{
+		flex: 1,
+		backgroundColor: '#F9FBFC'
+	},
   container: {
     flex: 1,
     backgroundColor: '#fff',
