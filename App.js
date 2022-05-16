@@ -4,8 +4,6 @@ import { StyleSheet, Text, Platform, View, Alert, TouchableNativeFeedback,Toucha
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import SignInScreen  from './src/screens/SignInScreen';
 import CommunityScreen  from './src/screens/Community';
-import { FlatList } from 'react-native-web';
-import Community from './src/screens/Community';
 
 export default function App() {
 	// console.log(require("./assets/icon.png"))
