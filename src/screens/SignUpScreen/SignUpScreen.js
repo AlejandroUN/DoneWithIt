@@ -62,7 +62,7 @@ const SignUpScreen = () => {
 			/>
 
 			<CustomButton 
-			text="Registered" 
+			text="Register" 
 			onPress={onRegisterPressed} 
 			/>
 

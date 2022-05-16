@@ -7,6 +7,8 @@ import SignUpScreen  from './src/screens/SignUpScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import NewPasswordScreen from './src/screens/NewPasswordScreen/NewPasswordScreen';
 import Navigation from './src/navigation';
+import CommunityScreen  from './src/screens/Community';
+
 
 export default function App() {
 	// console.log(require("./assets/icon.png"))
@@ -18,6 +20,10 @@ export default function App() {
   return (
 	  <SafeAreaView style={styles.root}>
 		  <Navigation />
+
+		  {/* <SignInScreen />
+		  <CommunityScreen/> */}
+
 	  </SafeAreaView>
 	//   <View
 	//   	style={{

@@ -1,7 +1,5 @@
 import React from 'react'
 import { View, Text, TextInput, Image, Pressable, StyleSheet, useWindowDimensions } from 'react-native'
-import customButton from '.';
-import Logo from '../../../assets/images/Meddit.jpg';
 
 const CustomButton = ({ onPress, text, type = "PRIMARY" }) => {
 	const {height} = useWindowDimensions();
@@ -13,7 +11,7 @@ const CustomButton = ({ onPress, text, type = "PRIMARY" }) => {
 		</Pressable>
 	);
 };
-
+//#3B71F3
 const styles = StyleSheet.create({
 	container:{
 		width: '100%',
@@ -26,7 +24,7 @@ const styles = StyleSheet.create({
 	},
 
 	container_PRIMARY:{
-		backgroundColor: '#3B71F3',
+		backgroundColor: 'indigo',
 	},
 	container_TERTIARY:{
 		
