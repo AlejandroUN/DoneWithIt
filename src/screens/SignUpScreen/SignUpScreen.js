@@ -16,7 +16,7 @@ const SignUpScreen = () => {
 	const onRegisterPressed = () => {
 		console.warn("onRegisterPressed");
 		// validate
-		navigation.navigate('Home');
+		navigation.navigate('Communities');
 	}
 	const onSignInPress = () => {
 		console.warn("onSignIpPress");

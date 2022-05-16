@@ -12,14 +12,13 @@ const CommunityScreen = ()=>{
                 <Text style={styles.title}>
                     Comunidades
                 </Text>
-                <CustomInput/>
+                <CustomInput placeholder="Buscar"/>
                 <CustomButton text={"Buscar"}/>
                 <FlatList/>
-                <CustomInput/>
+                <CustomInput placeholder="Nueva"/>
                 <CustomButton text={"Crear"}/>
             </View>
         </ScrollView>
-        // <FlatList style={styles.main}/>
     )
 }
 
@@ -27,6 +26,7 @@ const styles = StyleSheet.create({
 	main: {
 		alignItems: 'center',
 		padding: 20,
+        display: 'flex'
 	},
 	title: {
 		color: 'indigo',
