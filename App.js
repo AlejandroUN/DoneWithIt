@@ -3,6 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, Platform, View, Alert, TouchableNativeFeedback,TouchableHighlight,TouchableOpacity,TouchableWithoutFeedback, Image, SafeAreaView, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import SignInScreen  from './src/screens/SignInScreen';
+import SignUpScreen  from './src/screens/SignUpScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import NewPasswordScreen from './src/screens/NewPasswordScreen/NewPasswordScreen';
+import Navigation from './src/navigation';
 
 export default function App() {
 	// console.log(require("./assets/icon.png"))
@@ -13,7 +17,7 @@ export default function App() {
 	// console.log(useDeviceOrientation());
   return (
 	  <SafeAreaView style={styles.root}>
-		  <SignInScreen />
+		  <Navigation />
 	  </SafeAreaView>
 	//   <View
 	//   	style={{

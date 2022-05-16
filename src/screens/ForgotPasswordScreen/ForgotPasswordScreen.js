@@ -5,67 +5,41 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
 
-const SignInScreen = () => {
+const ForgotPasswordScreen = () => {
 	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
 
 	const navigation = useNavigation();
-
-	const onSignInPressed = () => {
-		console.warn("Sign In");
-
-		// validate user first
-
-		navigation.navigate('Home');
-	}
-	const onForgotPasswordPressed = () => {
-		console.warn("onForgotPasswordPressed");
-		navigation.navigate('ForgotPassword');
-	}	
-	const onSignUpPress = () => {
-		console.warn("onSignUpPress");
-		navigation.navigate('SignUp');
-	}	
 	
+	const onSendPressed = () => {
+		console.warn("onSendPressed");
+		navigation.navigate('NewPassword');
+	}
+	const onSignInPress = () => {
+		console.warn("onSignIpPress");
+		navigation.navigate('SignIn');
+	}	
 
 	const {height} = useWindowDimensions();
 	return (
 		// We put the hole view inside the ScrollView so that the user is able to scroll through the screen
 		<ScrollView>
 		<View style={styles.root}>
-			<Image 
-			source={Logo} 
-			style={[styles.root, {height: height * 0.3}]} 
-			resizeMode="contain" 
-			/>
+			<Text style={styles.title}>Reset your password</Text>
 
 			<CustomInput 
 			placeholder="Username" 
 			value={username} 
 			setValue={setUsername} 
 			/>
-
-			<CustomInput 
-			placeholder="Password" 
-			value={password} 
-			setValue={setPassword}
-			secureTextEntry={true} 
+			
+			<CustomButton 
+			text="Send" 
+			onPress={onSendPressed} 
 			/>
 
 			<CustomButton 
-			text="Sign In" 
-			onPress={onSignInPressed} 
-			/>
-
-			<CustomButton 
-			text="Forgot password?" 
-			onPress={onForgotPasswordPressed} 
-			type="TERTIARY" 
-			/>
-
-			<CustomButton 
-			text="Don't have an account? Create one" 
-			onPress={onSignUpPress} 
+			text="Back to Sign in" 
+			onPress={onSignInPress} 
 			type="TERTIARY" 
 			/>
 		</View>
@@ -82,7 +56,20 @@ const styles = StyleSheet.create({
 		width: '70%',
 		maxWidth: 300,
 		maxHeight: 200,
-	}
+	},
+	title:{
+		fontSize: 24,
+		fontWeight: 'bold',
+		color: '#051C60',
+		margin: 10,
+	},
+	text:{
+		color:'gray',
+		marginVertical: 10,
+	},
+	link: {
+		color: "#FDB075",
+	},
 })
 
-export default SignInScreen
+export default ForgotPasswordScreen;
