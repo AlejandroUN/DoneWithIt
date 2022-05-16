@@ -16,8 +16,8 @@ export default function App() {
 	// console.log(useDeviceOrientation());
   return (
 	  <SafeAreaView style={styles.root}>
-		  {/* <SignInScreen /> */}
-		  <CommunityScreen/>		  
+		  <SignInScreen />
+		  <CommunityScreen/>
 	  </SafeAreaView>
 	//   <View
 	//   	style={{
