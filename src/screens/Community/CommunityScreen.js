@@ -3,9 +3,15 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView, SafeAre
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import FlatList from '../../components/FlatList';
+import { useNavigation } from '@react-navigation/native';
 
 const CommunityScreen = ()=>{
     //const {height} = useWindowDimensions();
+    const navigation = useNavigation();
+	
+	const onNewPressed = () => {
+		navigation.navigate('NewCommunity');
+	}
     return (
         <ScrollView>
             <View style={styles.main}>
@@ -15,8 +21,7 @@ const CommunityScreen = ()=>{
                 <CustomInput placeholder="Buscar"/>
                 <CustomButton text={"Buscar"}/>
                 <FlatList/>
-                <CustomInput placeholder="Nueva"/>
-                <CustomButton text={"Crear"}/>
+                <CustomButton text={"Nueva"} onPress={onNewPressed} />
             </View>
         </ScrollView>
     )
