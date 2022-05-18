@@ -16,7 +16,7 @@ const SignInScreen = () => {
 
 		// validate user first
 
-		navigation.navigate('Home');
+		navigation.navigate('Communities');
 	}
 	const onForgotPasswordPressed = () => {
 		console.warn("onForgotPasswordPressed");

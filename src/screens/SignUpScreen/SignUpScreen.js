@@ -15,11 +15,16 @@ const SignUpScreen = () => {
 
 	const onRegisterPressed = () => {
 		console.warn("onRegisterPressed");
-		//validation
-		console.log(username);
-		console.log(email);
 
-		navigation.navigate('Home');
+		//validation
+		// console.log(username);
+		// console.log(email);
+
+		// navigation.navigate('Home');
+
+		// validate
+		navigation.navigate('Communities');
+
 	}
 	const onSignInPress = () => {
 		console.warn("onSignIpPress");
