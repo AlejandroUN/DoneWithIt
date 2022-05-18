@@ -11,11 +11,14 @@ const SignUpScreen = () => {
 	const [password, setPassword] = useState('');
 	const [passwordRepeat, setPasswordRepeat] = useState('');
 
-	const navigation = useNavigation();
+	const navigation = useNavigation();	
 
 	const onRegisterPressed = () => {
 		console.warn("onRegisterPressed");
-		// validate
+		//validation
+		console.log(username);
+		console.log(email);
+
 		navigation.navigate('Home');
 	}
 	const onSignInPress = () => {
@@ -31,6 +34,7 @@ const SignUpScreen = () => {
 	
 
 	const {height} = useWindowDimensions();
+
 	return (
 		// We put the hole view inside the ScrollView so that the user is able to scroll through the screen
 		<ScrollView>
