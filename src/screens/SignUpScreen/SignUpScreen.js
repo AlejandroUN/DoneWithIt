@@ -4,6 +4,8 @@ import Logo from '../../../assets/images/Meddit.jpg';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import apolloProvider from '../../providers/apollo.provider';
+import { gql } from "@apollo/client";
 
 const SignUpScreen = () => {
 	const [username, setUsername] = useState('');
@@ -13,18 +15,24 @@ const SignUpScreen = () => {
 
 	const navigation = useNavigation();	
 
-	const onRegisterPressed = () => {
+	const onRegisterPressed = async () => {
 		console.warn("onRegisterPressed");
 
-		//validation
-		// console.log(username);
-		// console.log(email);
+		const userdata = await apolloProvider.mutate({
+			mutation: gql`
+			mutation{
+				createUser(user:{
+				  email: "${email}",
+				  username: "${username}",
+				  password: "${password}"
+				})
+			}
+		  `
+		}).catch(err => {
 
-		// navigation.navigate('Home');
+		})
 
-		// validate
-		navigation.navigate('Communities');
-
+		navigation.navigate('SignIn');
 	}
 	const onSignInPress = () => {
 		console.warn("onSignIpPress");

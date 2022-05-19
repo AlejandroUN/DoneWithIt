@@ -4,6 +4,9 @@ import Logo from '../../../assets/images/Meddit.jpg';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import apolloProvider from '../../providers/apollo.provider';
+import { gql } from "@apollo/client";
+import AsyncStorage from '@react-native-community/async-storage';
 
 const SignInScreen = () => {
 	const [username, setUsername] = useState('');
@@ -11,13 +14,28 @@ const SignInScreen = () => {
 
 	const navigation = useNavigation();
 
-	const onSignInPressed = () => {
+	const onSignInPressed = async () => {
 		console.warn("Sign In");
+		console.log("nuevo")
+		console.log("username", username, "pasword", password);
+		const userdata = await apolloProvider.mutate({
+			mutation: gql`
+			mutation{
+				loginUser(user: { 
+					email: "${username}",
+					password: "${password}"
+				}) {
+					id
+				}
+			}
+		  `
+		}).catch(err => {
 
-		// validate user first
-
+		})
+		AsyncStorage.setItem("userId", userdata.data.loginUser.id);
 		navigation.navigate('Communities');
 	}
+
 	const onForgotPasswordPressed = () => {
 		console.warn("onForgotPasswordPressed");
 		navigation.navigate('ForgotPassword');
@@ -55,12 +73,6 @@ const SignInScreen = () => {
 			<CustomButton 
 			text="Sign In" 
 			onPress={onSignInPressed} 
-			/>
-
-			<CustomButton 
-			text="Forgot password?" 
-			onPress={onForgotPasswordPressed} 
-			type="TERTIARY" 
 			/>
 
 			<CustomButton 
