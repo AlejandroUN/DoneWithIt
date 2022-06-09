@@ -17,7 +17,7 @@ const defaultOptions = {
   }
 
 const client = new ApolloClient({
-    uri: 'https://0951-190-93-143-72.ngrok.io/graphql',
+    uri: 'https://meddit-ag-3fafemp3rq-uc.a.run.app/graphql',
     cache: new InMemoryCache(),
     defaultOptions: defaultOptions,
     fetchOptions: {

@@ -16,6 +16,7 @@ const NewCommunityScreen = () => {
 
 	const newCommunityPressed = async () => {
 		const userId = await AsyncStorage.getItem('userId');
+        console.log(userId)
 		const communityData = await apolloProvider.mutate({
 			mutation: gql`
 			mutation {

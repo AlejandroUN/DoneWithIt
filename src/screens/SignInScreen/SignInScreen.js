@@ -15,24 +15,27 @@ const SignInScreen = () => {
 	const navigation = useNavigation();
 
 	const onSignInPressed = async () => {
-		console.warn("Sign In");
-		console.log("nuevo")
-		console.log("username", username, "pasword", password);
+		let user = {
+			email: username,
+			password,
+			password_confirmation: password
+		}
 		const userdata = await apolloProvider.mutate({
-			mutation: gql`
-			mutation{
-				loginUser(user: { 
-					email: "${username}",
-					password: "${password}"
-				}) {
-					id
-				}
-			}
-		  `
-		}).catch(err => {
+            mutation:gql`mutation
+            ($user:LoginInput!)
+            {loginUser(user:$user) {
+                  auth_token,
+                  user{id}
+                }}
+                `,
+            variables:{
+                user,
+            },  
+          }).catch(err => {
 
 		})
-		AsyncStorage.setItem("userId", userdata.data.loginUser.id);
+		console.log(userdata)
+		AsyncStorage.setItem("userId", userdata.data.loginUser.user.id);
 		navigation.navigate('Communities');
 	}
 
